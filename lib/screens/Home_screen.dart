@@ -22,7 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: ListView(
           children: [
-            for (int i = 0; i <= 50; i++) CrazyCounter(),
+            for (int i = 0; i <= 10; i++)
+              CrazyCounter(
+                onCounterChanged: (int value) {
+                  print('counterul $i are valoarea $value');
+                },
+              ),
           ],
         ),
       ),

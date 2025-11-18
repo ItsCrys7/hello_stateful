@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 
 class CrazyCounter extends StatefulWidget {
-  const CrazyCounter({super.key});
+  const CrazyCounter({super.key, this.onCounterChanged});
 
+  final Function(int value)? onCounterChanged;
   @override
   State<CrazyCounter> createState() => _CrazyCounterState();
 }
@@ -20,6 +22,7 @@ class _CrazyCounterState extends State<CrazyCounter> {
             setState(() {
               _counter--;
             });
+            widget.onCounterChanged?.call(_counter);
           },
         ),
         // text widget that displays the counter
@@ -31,6 +34,7 @@ class _CrazyCounterState extends State<CrazyCounter> {
             setState(() {
               _counter++;
             });
+            widget.onCounterChanged?.call(_counter);
           },
         ),
       ],
