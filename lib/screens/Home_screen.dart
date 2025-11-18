@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_6/widgets/crazy_counter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,15 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Counterul este $_counter'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Text(
-              '$_counter',
-              style: TextStyle(fontSize: 72.0),
-            ),
-            if (_counter > 100) Text('Ai trecut de 100! Congrats!'),
-          ],
-        ),
+        child: CrazyCounter(),
+        
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.plus_one),
