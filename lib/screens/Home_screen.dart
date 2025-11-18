@@ -16,18 +16,28 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         foregroundColor: Colors.white,
-        title: Text('Titlu ecran'),
+        title: Text('Counterul este $_counter'),
       ),
       body: Center(
-        child: Text(
-          '$_counter',
-          style: TextStyle(fontSize: 72.0),
+        child: Column(
+          children: [
+            Text(
+              '$_counter',
+              style: TextStyle(fontSize: 72.0),
+            ),
+            if (_counter > 100) Text('Ai trecut de 100! Congrats!'),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.plus_one),
         onPressed: () {
-          _counter++;
+          setState(() {
+            _counter++;
+          });
+          // _counter++;
+          // setState(() {});
+          // print(_counter);
         },
       ),
     );
