@@ -20,8 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Counterul este $_counter'),
       ),
       body: Center(
-        child: CrazyCounter(),
-        
+        child: ListView(
+          children: [
+            for (int i = 0; i <= 50; i++) CrazyCounter(),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.plus_one),
